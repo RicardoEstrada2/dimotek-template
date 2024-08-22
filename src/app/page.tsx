@@ -116,15 +116,15 @@ function CaseStudies({
                   </Link>
                 </h3>
                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                  <time
-                    dateTime={caseStudy.date.split('-')[0]}
-                    className="font-semibold"
-                  >
-                    {caseStudy.date.split('-')[0]}
-                  </time>
-                  <span className="text-neutral-300" aria-hidden="true">
-                    /
-                  </span>
+                  {/*<time*/}
+                  {/*  dateTime={caseStudy.date.split('-')[0]}*/}
+                  {/*  className="font-semibold"*/}
+                  {/*>*/}
+                  {/*  {caseStudy.date.split('-')[0]}*/}
+                  {/*</time>*/}
+                  {/*<span className="text-neutral-300" aria-hidden="true">*/}
+                  {/*  /*/}
+                  {/*</span>*/}
                   <span>Case study</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
@@ -135,6 +135,43 @@ function CaseStudies({
                 </p>
               </article>
             </FadeIn>
+          ))}
+        </FadeInStagger>
+        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {caseStudies.map((caseStudy) => (
+              <FadeIn key={caseStudy.href} className="flex">
+                <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+                  <h3>
+                    <Link href={caseStudy.href}>
+                      <span className="absolute inset-0 rounded-3xl" />
+                      <Image
+                          src={caseStudy.logo}
+                          alt={caseStudy.client}
+                          className="h-16 w-16"
+                          unoptimized
+                      />
+                    </Link>
+                  </h3>
+                  <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
+                    {/*<time*/}
+                    {/*  dateTime={caseStudy.date.split('-')[0]}*/}
+                    {/*  className="font-semibold"*/}
+                    {/*>*/}
+                    {/*  {caseStudy.date.split('-')[0]}*/}
+                    {/*</time>*/}
+                    {/*<span className="text-neutral-300" aria-hidden="true">*/}
+                    {/*  /*/}
+                    {/*</span>*/}
+                    <span>Case study</span>
+                  </p>
+                  <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                    {caseStudy.title}
+                  </p>
+                  <p className="mt-4 text-base text-neutral-600">
+                    {caseStudy.description}
+                  </p>
+                </article>
+              </FadeIn>
           ))}
         </FadeInStagger>
       </Container>
@@ -158,13 +195,34 @@ function Services() {
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
-            <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
-              <StylizedImage
-                src={imageLaptop}
-                sizes="(min-width: 1024px) 41rem, 31rem"
-                className="justify-center lg:justify-end"
-              />
-            </FadeIn>
+            {/*<FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">*/}
+            {/*  <StylizedImage*/}
+            {/*    src={imageLaptop}*/}
+            {/*    sizes="(min-width: 1024px) 41rem, 31rem"*/}
+            {/*    className="justify-center lg:justify-end"*/}
+            {/*  />*/}
+            {/*</FadeIn>*/}
+            <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
+              <ListItem title="Web development">
+                We specialise in crafting beautiful, high quality marketing pages.
+                The rest of the website will be a shell that uses lorem ipsum
+                everywhere.
+              </ListItem>
+              <ListItem title="Application development">
+                We have a team of skilled developers who are experts in the latest
+                app frameworks, like Angular 1 and Google Web Toolkit.
+              </ListItem>
+              <ListItem title="E-commerce">
+                We are at the forefront of modern e-commerce development. Which
+                mainly means adding your logo to the Shopify store template we’ve
+                used for the past six years.
+              </ListItem>
+              <ListItem title="Custom content management">
+                At Studio we understand the importance of having a robust and
+                customised CMS. That’s why we run all of our client projects out
+                of a single, enormous Joomla instance.
+              </ListItem>
+            </List>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
             <ListItem title="Web development">
