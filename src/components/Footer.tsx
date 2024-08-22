@@ -4,6 +4,8 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Logo } from '@/components/Logo'
 import { socialMediaProfiles } from '@/components/SocialMedia'
+import logo from "@/images/logo-1.png";
+import Image from "next/image";
 
 const navigation = [
   {
@@ -100,7 +102,7 @@ function NewsletterForm() {
           <button
             type="submit"
             aria-label="Submit"
-            className="flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-950 text-white transition hover:bg-neutral-800"
+            className="flex aspect-square h-full items-center justify-center rounded-xl background-dimotek text-white transition hover:bg-neutral-800"
           >
             <ArrowIcon className="w-4" />
           </button>
@@ -122,10 +124,16 @@ export function Footer() {
         </div>
         <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
           <Link href="/" aria-label="Home">
-            <Logo className="h-8" fillOnHover />
+            {/*<Logo className="h-8" fillOnHover />*/}
+            <Image
+                src={logo}
+                width={100}
+                height={25}
+                alt="Logo Dimotek"
+            />
           </Link>
           <p className="text-sm text-neutral-700">
-            © Studio Agency Inc. {new Date().getFullYear()}
+            © Dimotek. {new Date().getFullYear()}
           </p>
         </div>
       </FadeIn>
