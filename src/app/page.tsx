@@ -19,6 +19,15 @@ import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
+
+import react from '@/images/clients/dev-icons/react.png'
+import python from '@/images/clients/dev-icons/python.png'
+import njs from '@/images/clients/dev-icons/node.png'
+import dnet from '@/images/clients/dev-icons/dot-net.png'
+import javaScript from '@/images/clients/dev-icons/js.png'
+import php from '@/images/clients/dev-icons/php.png'
+
+
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 
 const clients = [
@@ -32,25 +41,37 @@ const clients = [
   ['North Adventures', logoNorthAdventures],
 ]
 
+const langs = [
+  ['React', react],
+  ['Python', python],
+  ['NodeJS', njs],
+  ['.Net', dnet],
+  ['JavaScript', javaScript],
+  ['PHP', php],
+]
+
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="mt-24 rounded-4xl background-dimotek py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            We’ve worked with hundreds of amazing people
+            Tenemos Experiencia en diversas tecnologias, tales como:
           </h2>
-          <div className="h-px flex-auto bg-neutral-800" />
+          <div className="h-px flex-auto bg-white" />
         </FadeIn>
         <FadeInStagger faster>
           <ul
             role="list"
             className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
           >
-            {clients.map(([client, logo]) => (
-              <li key={client}>
+            {langs.map(([name, logo], index) => (
+              <li key={index}>
                 <FadeIn>
-                  <Image src={logo} alt={client} unoptimized />
+                  <div className='flex items-center gap-x-8'>
+                    <Image src={logo} alt={name.toString()} unoptimized />
+                    <span className='text-white'>{name.toString()}</span>
+                  </div>
                 </FadeIn>
               </li>
             ))}
@@ -184,13 +205,11 @@ export default async function Home() {
     <>
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-            Award-winning development studio based in Denmark.
+          <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-5xl">
+            Agencia Digital con operaciones en Norte América, Latam & Europa.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            We are a development studio working at the intersection of design
-            and technology. It’s a really busy intersection though — a lot of
-            our staff have been involved in hit and runs.
+            Somos un empresa Full Stack que combina las Tecnologías de última generación brindando experiencias únicas a los proyectos de nuestros clientes.
           </p>
         </FadeIn>
       </Container>
