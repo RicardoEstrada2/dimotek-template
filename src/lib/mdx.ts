@@ -40,11 +40,14 @@ export interface Article {
 
 export interface CaseStudy {
   date: string
+  date_esp: string
   client: string
+  client_esp: string
   title: string
   description: string
   summary: Array<string>
   logo: ImageProps['src']
+  url: string
   image: ImagePropsWithOptionalAlt
   service: string
   testimonial: {

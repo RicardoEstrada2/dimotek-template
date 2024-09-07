@@ -5,5 +5,10 @@
 
 .background-dimotek-h{
     --tw-bg-opacity: 1;
-    background-color: rgb(50, 66, 143);
+    background-color: #224A93;
+}
+
+.background-dimotek-buttons:hover{
+    --tw-bg-opacity: 1;
+    background-color: #224A93;
 }

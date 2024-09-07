@@ -11,9 +11,9 @@ const navigation = [
   {
     title: 'Work',
     links: [
-      { title: 'FamilyFund', href: '/work/family-fund' },
-      { title: 'Unseal', href: '/work/unseal' },
-      { title: 'Phobia', href: '/work/phobia' },
+      { title: 'FamilyFund', href: '/work/alumio' },
+      { title: 'Unseal', href: '/work/vtex' },
+      { title: 'Phobia', href: '/work/stripe' },
       {
         title: (
           <>
@@ -102,7 +102,7 @@ function NewsletterForm() {
           <button
             type="submit"
             aria-label="Submit"
-            className="flex aspect-square h-full items-center justify-center rounded-xl background-dimotek text-white transition hover:bg-neutral-800"
+            className="flex aspect-square h-full items-center justify-center rounded-xl background-dimotek text-white transition background-dimotek-buttons"
           >
             <ArrowIcon className="w-4" />
           </button>

@@ -7,6 +7,7 @@ import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { GridPattern } from '@/components/GridPattern'
 import { SectionIntro } from '@/components/SectionIntro'
 import { formatDate } from '@/lib/formatDate'
+import Image from "next/image";
 
 function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -25,6 +26,7 @@ interface Page {
   date: string
   title: string
   description: string
+    logo: string
 }
 
 function PageLink({ page }: { page: Page }) {
@@ -34,22 +36,28 @@ function PageLink({ page }: { page: Page }) {
         position="left"
         className="relative flex flex-col items-start pl-8"
       >
+        <Image
+          src={page.logo}
+          alt={page.description}
+          className=""
+          unoptimized
+        />
         <h3 className="mt-6 text-base font-semibold text-neutral-950">
           {page.title}
         </h3>
-        <time
-          dateTime={page.date}
-          className="order-first text-sm text-neutral-600"
-        >
-          {formatDate(page.date)}
-        </time>
+        {/*<time*/}
+        {/*  dateTime={page.date}*/}
+        {/*  className="order-first text-sm text-neutral-600"*/}
+        {/*>*/}
+        {/*  {formatDate(page.date)}*/}
+        {/*</time>*/}
         <p className="mt-2.5 text-base text-neutral-600">{page.description}</p>
         <Link
           href={page.href}
           className="mt-6 flex gap-x-3 text-base font-semibold text-neutral-950 transition hover:text-neutral-700"
           aria-label={`Read more: ${page.title}`}
         >
-          Read more
+            Saber Más
           <ArrowIcon className="w-6 flex-none fill-current" />
           <span className="absolute inset-0" />
         </Link>

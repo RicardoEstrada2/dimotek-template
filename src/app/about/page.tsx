@@ -22,7 +22,7 @@ import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
 import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
 import imageMichaelFoster from '@/images/team/michael-foster.jpg'
 import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
-import { loadArticles } from '@/lib/mdx'
+import {type CaseStudy, loadArticles, loadCaseStudies, type MDXEntry} from '@/lib/mdx'
 
 function Culture() {
   return (
@@ -184,8 +184,16 @@ export const metadata: Metadata = {
     'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
 }
 
-export default async function About() {
+export default async function About({
+    caseStudy
+  }: {
+    caseStudy: MDXEntry<CaseStudy>
+}) {
   let blogArticles = (await loadArticles()).slice(0, 2)
+  let allCaseStudies = await loadCaseStudies()
+  let moreCaseStudies = allCaseStudies
+      .filter(({ metadata }) => metadata !== caseStudy)
+      .slice(0, 2)
 
   return (
     <>
@@ -223,9 +231,9 @@ export default async function About() {
 
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
-        title="From the blog"
-        intro="Our team of experienced designers and developers has just one thing on their mind; working on your ideas to draw a smile on the face of your users worldwide. From conducting Brand Sprints to UX Design."
-        pages={blogArticles}
+        title="Otras Soluciones"
+        intro=""
+        pages={moreCaseStudies}
       />
 
       <ContactSection />

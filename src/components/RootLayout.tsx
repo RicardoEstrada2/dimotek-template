@@ -170,7 +170,7 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Proyectos</NavigationItem>
+        <NavigationItem href="/work">Soluciones</NavigationItem>
         <NavigationItem href="/about">Nosotros</NavigationItem>
       </NavigationRow>
       <NavigationRow>
