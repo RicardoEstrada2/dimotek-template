@@ -31,6 +31,7 @@ export interface Article {
   date: string
   title: string
   description: string
+  logo: ImageProps['src']
   author: {
     name: string
     role: string
