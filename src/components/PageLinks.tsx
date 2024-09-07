@@ -8,6 +8,7 @@ import { GridPattern } from '@/components/GridPattern'
 import { SectionIntro } from '@/components/SectionIntro'
 import { formatDate } from '@/lib/formatDate'
 import Image from "next/image";
+import {StaticImport} from "next/dist/shared/lib/get-img-props";
 
 function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -26,7 +27,7 @@ interface Page {
   date: string
   title: string
   description: string
-    logo: string
+    logo: string | StaticImport
 }
 
 function PageLink({ page }: { page: Page }) {
@@ -76,6 +77,7 @@ export function PageLinks({
   pages: Array<Page>
   intro?: string
   className?: string
+    logo?: string
 }) {
   return (
     <div className={clsx('relative pt-24 sm:pt-32 lg:pt-40', className)}>
